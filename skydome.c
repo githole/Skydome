@@ -105,7 +105,7 @@ int main(int argc, char **argv) {
 
   for (int y = 0; y < height; y ++) {
     for (int x = 0; x < width; x ++) {
-      double PI = 3.14159265459;
+      double PI = 3.14159265359;
 
       int cx = width / 2;
       int cy = height / 2;
