@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <memory.h>
 
 #include "ArHosekSkyModel.h"
 
@@ -98,8 +99,7 @@ int main(int argc, char **argv) {
   double turbidity = atof(argv[4]);
   double albedo = atof(argv[5]);
   double solarElevation = atof(argv[6]);
-  RawImage img[height * width];
-
+  RawImage *img = (RawImage*)malloc(sizeof(RawImage) * width * height);
   skymodel_state = arhosek_xyz_skymodelstate_alloc_init(turbidity, albedo, solarElevation);
 
 
@@ -144,6 +144,7 @@ int main(int argc, char **argv) {
 
   // save
   saveHDRfile(argv[1], img, width, height);
+  free(img);
 
   return 0;
 }
