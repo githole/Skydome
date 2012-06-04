@@ -6,5 +6,7 @@ An Analytic Model for Full Spectral Sky-Dome Radiance(http://cgg.mff.cuni.cz/pro
 C99対応コンパイラが必要。
 
 ・使い方
+
 skydome ファイル名 幅 高さ 濁度 地面のアルベド値 太陽と地面の角度
+
 などとする。
